@@ -17,6 +17,7 @@ I am a Computer Engineering student at Chulalongkorn University, with a passion 
 - Version Control Systems: Git
 - Software Development Tools: Jira, Confluence
 - Design: Figma
+- Performance Test: ALM & Load Runner
 
 ## Soft Skills
 
