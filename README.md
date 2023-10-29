@@ -1,8 +1,8 @@
 # Tanakit Phentun (Tum)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/tumrabert/)
-[![Facebook](https://img.shields.io/badge/Facebook-Follow-blue)](https://www.facebook.com/tumrabert/)
-[![Instagram](https://img.shields.io/badge/Instagram-Follow-blue)](https://www.facebook.com/tumrabertt/)
+[![LinkedIn](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://www.linkedin.com/in/tumrabert/)
+[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/tumrabert/)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/tumrabertt/)
 
 ## About Me
 
