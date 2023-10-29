@@ -35,12 +35,12 @@ I am a Computer Engineering student at Chulalongkorn University, with a passion 
 ## Contact
 
 - Email: tum_tankid@hotmail.com
-- LinkedIn: [Your LinkedIn Profile URL]
+- LinkedIn: https://inkedin.com/in/tumrabert
 - GitHub: https://github.com/tumrabert
 
 ## Projects
 
-- [Swine fatthickness measurement]()
+- [Swine fat thickness measurement]()
 - [Playhub](https://github.com/2110336-2565-2/sec3-group13-playhub)
 
 Feel free to connect with me and explore my projects!
