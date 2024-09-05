@@ -7,7 +7,7 @@
 
 ## About Me
 
-I am a Computer Engineering student at Chulalongkorn University, with a passion for software quality management and technology. I have experience in planning, executing, and overseeing testing activities to ensure software meets quality standards.
+Currently, I work as a System Analyst at the Bank of Thailand (BOT). I have a keen interest in blockchain and cryptocurrency, and I am dedicated to supporting BOT’s mission to enhance the well-being of Thai citizens by advancing Thailand’s financial sector.
 
 ## Skills
 
@@ -39,6 +39,7 @@ I am a Computer Engineering student at Chulalongkorn University, with a passion 
 - Email: tum_tankid@hotmail.com
 - LinkedIn: https://linkedin.com/in/tumrabert
 - GitHub: https://github.com/tumrabert
+- Resume : https://tumrabertworld.vercel.app/resume
 
 ## Projects
 
