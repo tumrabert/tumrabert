@@ -6,7 +6,7 @@
 
 ## About Me
 
-Hi, I'm **Tanakit Phentun** (nickname Tum), a **System Analyst at the Bank of Thailand**. I specialize in backend development, blockchain, and cloud engineering, with a passion for advancing financial payment systems and innovative Web3 solutions. My mission is to enhance technology and processes in Thailand’s financial ecosystem.
+Hi, I'm **Tanakit Phentun** (nickname Tum), I specialize in backend development, blockchain, and cloud engineering, with a passion for advancing financial payment systems and innovative Web3 solutions. My mission is to enhance technology and processes in Thailand’s financial ecosystem.
 
 - 🌍 **Location**: Bangkok, Thailand
 - ✉️ **Email**: tum_tanakid@hotmail.com
@@ -33,13 +33,7 @@ Hi, I'm **Tanakit Phentun** (nickname Tum), a **System Analyst at the Bank of Th
 
 ---
 
-## Work Experience
-
-### System Analyst  
-**Bank of Thailand (Central Bank of Thailand)**  
-_Aug 2024 – Present_  
-- Managed system development, testing, and implementation for national-scale projects.
-- Enhanced and maintained .NET applications, aligning functionalities with system specifications.
+## Experience
 
 ### Full Stack Developer Internship  
 **Ayodia Co., Ltd**  
