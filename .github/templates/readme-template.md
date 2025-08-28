@@ -6,7 +6,7 @@
 
 **{{title}}** | {{location}} 📍
 
-> {{description}}...
+> {{description}}
 
 ### 📊 Quick Stats
 - 🎯 **Experience**: {{experience}}+ years
@@ -17,6 +17,14 @@
 ## 💼 Current Role
 
 {{currentRole}}
+
+## 💼 Previous Experience
+
+{{previousExperience}}
+
+## 🎓 Education
+
+{{education}}
 
 ## 🛠️ Tech Stack
 {{techStack}}
@@ -32,14 +40,9 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tumrabert&theme=radical" alt="GitHub Streak" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=tumrabert&theme=react-dark&hide_border=true" alt="GitHub Activity Graph" />
 </div>
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=tumrabert&theme=radical&no-frame=false&no-bg=false&margin-w=4&row=1" alt="GitHub Trophies" />
-</div>
 
 ## 📫 Let's Connect
 

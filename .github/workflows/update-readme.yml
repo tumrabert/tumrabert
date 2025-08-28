@@ -44,6 +44,7 @@ jobs:
             const data = response.data.data;
             const intro = data.intro || {};
             const workExperiences = data.workExperiences || [];
+            const education = data.education || [];
             const technologies = data.technologies || [];
             const projects = data.displayProjects || [];
             
@@ -84,6 +85,42 @@ jobs:
               }).join('');
             }
 
+            // Build previous experience section
+            let previousExperience = 'No previous work experience listed.';
+            if (workExperiences.length > 1) {
+              previousExperience = workExperiences.slice(1).map((exp, index) => {
+                let expSection = '### ' + (exp.position || 'Position') + ' @ ' + (exp.company || 'Company');
+                expSection += String.fromCharCode(10) + '📅 ' + (exp.start || 'Start Date') + ' - ' + (exp.end || 'End Date');
+                if (exp.details && Array.isArray(exp.details)) {
+                  expSection += String.fromCharCode(10) + String.fromCharCode(10) + exp.details.map(detail => '- ' + detail).join(String.fromCharCode(10));
+                }
+                return expSection;
+              }).join(String.fromCharCode(10) + String.fromCharCode(10));
+            }
+
+            // Build education section
+            let educationSection = 'Education information not available.';
+            if (education && Array.isArray(education) && education.length > 0) {
+              educationSection = education.map(edu => {
+                let eduSection = '### ' + (edu.degree || 'Degree') + ' in ' + (edu.field || 'Field of Study');
+                eduSection += String.fromCharCode(10) + '**' + (edu.school || 'Institution') + '**';
+                if (edu.location) {
+                  eduSection += ' | ' + edu.location;
+                }
+                if (edu.startYear || edu.endYear) {
+                  eduSection += String.fromCharCode(10) + '📅 ' + (edu.startYear || 'Start') + ' - ' + (edu.endYear || 'End');
+                }
+                if (edu.gpa) {
+                  eduSection += String.fromCharCode(10) + '**GPA**: ' + edu.gpa;
+                }
+                if (edu.achievements && Array.isArray(edu.achievements)) {
+                  eduSection += String.fromCharCode(10) + String.fromCharCode(10) + '**Achievements**:' + String.fromCharCode(10);
+                  eduSection += edu.achievements.map(achievement => '- ' + achievement).join(String.fromCharCode(10));
+                }
+                return eduSection;
+              }).join(String.fromCharCode(10) + String.fromCharCode(10));
+            }
+
             let featuredProjects = '### 🚀 Coming Soon' + String.fromCharCode(10) + 'Currently working on exciting projects that will be showcased here soon!';
             if (projects && Array.isArray(projects) && projects.length > 0) {
               featuredProjects = projects.filter(p => p && !p.hide).slice(0, 3).map(project => {
@@ -105,12 +142,14 @@ jobs:
               .replace(/{{name}}/g, intro.name || 'Tanakit')
               .replace(/{{title}}/g, intro.title || 'AI Software Engineer')
               .replace(/{{location}}/g, intro.location || 'Bangkok, Thailand')
-              .replace(/{{description}}/g, intro.description?.substring(0, 200) || 'Passionate about building intelligent systems that solve real-world problems')
+              .replace(/{{description}}/g, intro.description || 'Passionate about building intelligent systems that solve real-world problems')
               .replace(/{{experience}}/g, intro.quickFacts?.yearOfExperience || '3')
               .replace(/{{projectsCount}}/g, intro.quickFacts?.projectsCount || '10')
               .replace(/{{technologiesCount}}/g, intro.quickFacts?.technologiesCount || '20')
               .replace(/{{hobbies}}/g, intro.quickFacts?.hobbies?.join(', ') || 'Running, Music, Gaming')
               .replace(/{{currentRole}}/g, currentRole)
+              .replace(/{{previousExperience}}/g, previousExperience)
+              .replace(/{{education}}/g, educationSection)
               .replace(/{{techStack}}/g, techStack)
               .replace(/{{featuredProjects}}/g, featuredProjects)
               .replace(/{{email}}/g, email)
