@@ -6,7 +6,7 @@
 
 **{{title}}** | {{location}} 📍
 
-> {{description}}
+{{description}}
 
 ### 📊 Quick Stats
 - 🎯 **Experience**: {{experience}}+ years
