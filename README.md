@@ -6,7 +6,7 @@
 
 **AI Software Engineer** | Bangkok, Thailand 📍
 
-> My career is driven by a passion for building intelligent systems that solve real-world problems. I began with a strong foundation in software engineering, developing enterprise applications for the financial sector, which taught me how to build robust, scalable technology.
+My career is driven by a passion for building intelligent systems that solve real-world problems. I began with a strong foundation in software engineering, developing enterprise applications for the financial sector, which taught me how to build robust, scalable technology.
 
 Today, I apply those principles to the world of AI, designing and deploying autonomous agents and automation workflows. I am motivated by the challenge of turning innovative ideas into practical, high-impact solutions.
 
@@ -34,7 +34,15 @@ Today, I apply those principles to the world of AI, designing and deploying auto
 
 ## 🎓 Education
 
-Education information not available.
+### Bachelor of Engineering, Computer Engineering
+**Chulalongkorn University**
+📅 2020 - 2024
+**GPAX**: 3.02
+
+**Details**:
+- Capstone Project: End-to-End Data Platform for Real-Time Analytics
+- -Architected and delivered a complete data platform on Azure to ingest, process, and analyze high-volume, real-time data.
+- -Built the backend data pipeline using Python and FastAPI and developed a full-stack interface with React for data interaction.
 
 ## 🛠️ Tech Stack
 
@@ -116,4 +124,4 @@ Created with:
 </div>
 
 ---
-*Last updated: August 28, 2025 at 10:20 PM GMT+7*
+*Last updated: August 28, 2025 at 10:24 PM GMT+7*
