@@ -44,7 +44,7 @@ jobs:
             const data = response.data.data;
             const intro = data.intro || {};
             const workExperiences = data.workExperiences || [];
-            const education = data.education || [];
+            const education = data.educations || [];
             const technologies = data.technologies || [];
             const projects = data.displayProjects || [];
             
@@ -102,20 +102,17 @@ jobs:
             let educationSection = 'Education information not available.';
             if (education && Array.isArray(education) && education.length > 0) {
               educationSection = education.map(edu => {
-                let eduSection = '### ' + (edu.degree || 'Degree') + ' in ' + (edu.field || 'Field of Study');
-                eduSection += String.fromCharCode(10) + '**' + (edu.school || 'Institution') + '**';
-                if (edu.location) {
-                  eduSection += ' | ' + edu.location;
+                let eduSection = '### ' + (edu.degree || 'Degree');
+                eduSection += String.fromCharCode(10) + '**' + (edu.university || 'Institution') + '**';
+                if (edu.start_year || edu.end_year) {
+                  eduSection += String.fromCharCode(10) + '📅 ' + (edu.start_year || 'Start') + ' - ' + (edu.end_year || 'End');
                 }
-                if (edu.startYear || edu.endYear) {
-                  eduSection += String.fromCharCode(10) + '📅 ' + (edu.startYear || 'Start') + ' - ' + (edu.endYear || 'End');
+                if (edu.GPAX) {
+                  eduSection += String.fromCharCode(10) + '**GPAX**: ' + edu.GPAX;
                 }
-                if (edu.gpa) {
-                  eduSection += String.fromCharCode(10) + '**GPA**: ' + edu.gpa;
-                }
-                if (edu.achievements && Array.isArray(edu.achievements)) {
-                  eduSection += String.fromCharCode(10) + String.fromCharCode(10) + '**Achievements**:' + String.fromCharCode(10);
-                  eduSection += edu.achievements.map(achievement => '- ' + achievement).join(String.fromCharCode(10));
+                if (edu.details && Array.isArray(edu.details)) {
+                  eduSection += String.fromCharCode(10) + String.fromCharCode(10) + '**Details**:' + String.fromCharCode(10);
+                  eduSection += edu.details.map(detail => '- ' + detail).join(String.fromCharCode(10));
                 }
                 return eduSection;
               }).join(String.fromCharCode(10) + String.fromCharCode(10));
