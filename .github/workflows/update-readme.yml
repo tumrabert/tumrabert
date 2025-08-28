@@ -136,11 +136,11 @@ jobs:
               minute: '2-digit', 
               timeZoneName: 'short' 
             });
-            const fallbackReadme = '# Hi there, I\\'m Tanakit 👋\\n\\n' +
+            const fallbackReadme = '# Hi there, I am Tanakit 👋\\n\\n' +
               '## 🚀 About Me\\n' +
               '**AI Software Engineer** | Bangkok, Thailand 📍\\n' +
               '> Passionate about building intelligent systems that solve real-world problems...\\n\\n' +
-              '## 📫 Let\\'s Connect\\n' +
+              '## 📫 Let us Connect\\n' +
               '[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/tumrabert)\\n' +
               '[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tumrabert)\\n' +
               '[![Portfolio](https://img.shields.io/badge/-Portfolio-FF6B6B?style=for-the-badge&logo=vercel)](https://tumrabert.com)\\n\\n' +
