@@ -40,7 +40,7 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=tumrabert&theme=react-dark&hide_border=true" alt="GitHub Activity Graph" />
+  <img src="https://ghchart.rshah.org/tumrabert" alt="GitHub Contribution Calendar" />
 </div>
 
 
