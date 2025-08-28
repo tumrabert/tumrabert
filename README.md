@@ -6,7 +6,9 @@
 
 **AI Software Engineer** | Bangkok, Thailand 📍
 
-> My career is driven by a passion for building intelligent systems that solve real-world problems. I began with a strong foundation in software engineering, developing enterprise applications for the f...
+> My career is driven by a passion for building intelligent systems that solve real-world problems. I began with a strong foundation in software engineering, developing enterprise applications for the financial sector, which taught me how to build robust, scalable technology.
+
+Today, I apply those principles to the world of AI, designing and deploying autonomous agents and automation workflows. I am motivated by the challenge of turning innovative ideas into practical, high-impact solutions.
 
 ### 📊 Quick Stats
 - 🎯 **Experience**: 3+ years
@@ -21,6 +23,18 @@
 
 - Design and build data-driven AI automation workflows, integrating various data sources via APIs for enterprise clients.
 - Collaborate with cross-functional teams to develop and deploy AI/ML solutions into production environments.
+
+## 💼 Previous Experience
+
+### System Analyst @ Bank of Thailand
+📅 August 2024 - January 2025
+
+- Developed and maintained enterprise applications with a focus on robust data handling, processing, and security.
+- Managed and optimized large-scale relational databases using SQL to ensure data integrity and performance.
+
+## 🎓 Education
+
+Education information not available.
 
 ## 🛠️ Tech Stack
 
@@ -72,14 +86,9 @@ Created with:
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tumrabert&theme=radical" alt="GitHub Streak" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=tumrabert&theme=react-dark&hide_border=true" alt="GitHub Activity Graph" />
 </div>
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=tumrabert&theme=radical&no-frame=false&no-bg=false&margin-w=4&row=1" alt="GitHub Trophies" />
-</div>
 
 ## 📫 Let's Connect
 
@@ -107,4 +116,4 @@ Created with:
 </div>
 
 ---
-*Last updated: August 28, 2025 at 10:10 PM GMT+7*
+*Last updated: August 28, 2025 at 10:20 PM GMT+7*
