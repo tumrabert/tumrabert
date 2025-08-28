@@ -23,20 +23,12 @@ jobs:
         
     - name: Install dependencies
       run: |
-        cat > package.json << 'EOF'
-        {
-          "name": "readme-updater",
-          "version": "1.0.0",
-          "dependencies": {
-            "axios": "^1.6.0"
-          }
-        }
-        EOF
-        npm install
+        npm init -y
+        npm install axios
         
-    - name: Update README
+    - name: Create update script
       run: |
-        cat > update-readme.js << 'EOF'
+        cat > update-readme.js << 'SCRIPT_EOF'
         const axios = require('axios');
         const fs = require('fs');
 
@@ -45,19 +37,20 @@ jobs:
             console.log('Fetching portfolio data...');
             const response = await axios.get('https://tumrabert.com/api/portfolio');
             
-            // Validate API response
             if (!response.data || !response.data.success || !response.data.data) {
               throw new Error('Invalid API response structure');
             }
             
             const data = response.data.data;
-            
             const intro = data.intro || {};
             const workExperiences = data.workExperiences || [];
             const technologies = data.technologies || [];
             const projects = data.displayProjects || [];
             
-            // Group technologies by category with validation
+            // Read template file
+            const template = fs.readFileSync('.github/templates/readme-template.md', 'utf8');
+            
+            // Group technologies by category
             const groupedTech = technologies.reduce((acc, tech) => {
               if (tech && tech.category && tech.name) {
                 if (!acc[tech.category]) acc[tech.category] = [];
@@ -66,149 +59,94 @@ jobs:
               return acc;
             }, {});
             
-            // Helper function to create safe badge URLs
             function createBadgeUrl(tech) {
               const safeTech = encodeURIComponent(tech.replace(/[^a-zA-Z0-9\s]/g, ''));
-              const logoName = tech.toLowerCase()
-                .replace(/[^a-z0-9]/g, '')
-                .replace(/\s+/g, '');
+              const logoName = tech.toLowerCase().replace(/[^a-z0-9]/g, '').replace(/\s+/g, '');
               return `![${tech}](https://img.shields.io/badge/-${safeTech}-000000?style=flat-square&logo=${logoName}&logoColor=white)`;
             }
             
-            const readme = `# Hi there, I'm ${intro.name || 'Tanakit'} 👋
+            // Build dynamic content
+            let currentRole = 'Currently seeking new opportunities';
+            if (workExperiences.length > 0 && workExperiences[0]) {
+              const exp = workExperiences[0];
+              currentRole = '**' + (exp.position || 'Software Engineer') + '** @ **' + (exp.company || 'Tech Company') + '**\\n';
+              currentRole += '📅 ' + (exp.start || 'Present') + ' - ' + (exp.end || 'Present') + '\\n\\n';
+              if (exp.details && Array.isArray(exp.details)) {
+                currentRole += exp.details.map(detail => '- ' + detail).join('\\n');
+              }
+            }
 
-![Profile Banner](https://github.com/tumrabert/tumrabert/blob/main/assets/banner.gif?raw=true)
+            let techStack = '### Programming Languages\\nWorking with various technologies to build amazing projects!';
+            if (Object.entries(groupedTech).length > 0) {
+              techStack = Object.entries(groupedTech).map(([category, techs]) => {
+                const badges = techs && Array.isArray(techs) ? techs.map(tech => createBadgeUrl(tech)).join(' ') : '';
+                return '\\n### ' + category + '\\n' + badges;
+              }).join('');
+            }
 
-## 🚀 About Me
+            let featuredProjects = '### 🚀 Coming Soon\\nCurrently working on exciting projects that will be showcased here soon!';
+            if (projects && Array.isArray(projects) && projects.length > 0) {
+              featuredProjects = projects.filter(p => p && !p.hide).slice(0, 3).map(project => {
+                const name = project.name || 'Untitled Project';
+                const url = project.demo || project.github || '#';
+                const desc = project.description ? project.description.substring(0, 150) + '...' : 'Amazing project that showcases innovative solutions and technical expertise.';
+                const techs = project.technologies && Array.isArray(project.technologies) ? project.technologies.map(tech => '`' + tech + '`').join(' ') : 'Various technologies';
+                const githubBadge = project.github ? '[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)](' + project.github + ')' : '';
+                const demoBadge = project.demo ? '[![Demo](https://img.shields.io/badge/-Live_Demo-FF6B6B?style=flat-square&logo=vercel)](' + project.demo + ')' : '';
+                return '\\n### 🔗 [' + name + '](' + url + ')\\n\\n' + desc + '\\n\\n**Tech Stack**: ' + techs + '\\n\\n' + githubBadge + ' ' + demoBadge;
+              }).join('');
+            }
 
-**${intro.title || 'AI Software Engineer'}** | ${intro.location || 'Bangkok, Thailand'} 📍
-
-> ${intro.description?.substring(0, 200) || 'Passionate about building intelligent systems that solve real-world problems'}...
-
-### 📊 Quick Stats
-- 🎯 **Experience**: ${intro.quickFacts?.yearOfExperience || '3'}+ years
-- 🛠️ **Projects**: ${intro.quickFacts?.projectsCount || '10'}+ completed
-- 💻 **Technologies**: ${intro.quickFacts?.technologiesCount || '20'}+ mastered
-- 🎮 **Hobbies**: ${intro.quickFacts?.hobbies?.join(', ') || 'Running, Music, Gaming'}
-
-## 💼 Current Role
-
-${workExperiences.length > 0 && workExperiences[0] ? `**${workExperiences[0].position || 'Software Engineer'}** @ **${workExperiences[0].company || 'Tech Company'}**  
-📅 ${workExperiences[0].start || 'Present'} - ${workExperiences[0].end || 'Present'}
-
-${workExperiences[0].details && Array.isArray(workExperiences[0].details) ? workExperiences[0].details.map(detail => `- ${detail}`).join('\n') : ''}` : 'Currently seeking new opportunities'}
-
-## 🛠️ Tech Stack
-
-${Object.entries(groupedTech).length > 0 ? Object.entries(groupedTech).map(([category, techs]) => `
-### ${category}
-${techs && Array.isArray(techs) ? techs.map(tech => createBadgeUrl(tech)).join(' ') : ''}
-`).join('') : '### Programming Languages\nWorking with various technologies to build amazing projects!'}
-
-## 🌟 Featured Projects
-
-${projects && Array.isArray(projects) && projects.length > 0 ? projects
-  .filter(p => p && !p.hide)
-  .slice(0, 3)
-  .map(project => `
-### 🔗 [${project.name || 'Untitled Project'}](${project.demo || project.github || '#'})
-
-${project.description ? project.description.substring(0, 150) + '...' : 'Amazing project that showcases innovative solutions and technical expertise.'}
-
-**Tech Stack**: ${project.technologies && Array.isArray(project.technologies) ? project.technologies.map(tech => `\`${tech}\``).join(' ') : 'Various technologies'}
-
-${project.github ? `[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)](${project.github})` : ''} ${project.demo ? `[![Demo](https://img.shields.io/badge/-Live_Demo-FF6B6B?style=flat-square&logo=vercel)](${project.demo})` : ''}
-`).join('') : `
-### 🚀 Coming Soon
-Currently working on exciting projects that will be showcased here soon!
-`}
-
-## 📈 GitHub Analytics
-
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=tumrabert&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tumrabert&layout=compact&langs_count=8&theme=radical"/>
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tumrabert&theme=radical" alt="GitHub Streak" />
-</div>
-
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=tumrabert&theme=radical&no-frame=false&no-bg=false&margin-w=4&row=1" alt="GitHub Trophies" />
-</div>
-
-## 📫 Let's Connect
-
-<div align="center">
-
-[![Email](https://img.shields.io/badge/-${intro.email || 'email@domain.com'}-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:${intro.email || 'email@domain.com'})
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://${intro.linkedin ? intro.linkedin.replace('linkedin.com/in/', 'linkedin.com/in/') : 'linkedin.com/in/tumrabert'})
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/tumrabert)
-[![Portfolio](https://img.shields.io/badge/-Portfolio-FF6B6B?style=for-the-badge&logo=vercel)](https://tumrabert.com)
-
-</div>
-
-## 💡 Fun Facts
-
-- 🔄 This README auto-updates daily using GitHub Actions
-- 📊 Data is synced from my portfolio API: \`https://tumrabert.com/api/portfolio\`
-- 🎯 Always learning and building cool stuff!
-
----
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=tumrabert&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile views" />
-  <br><br>
-  <b>⭐ If you like my work, consider giving a star to my repositories!</b>
-</div>
-
----
-*Last updated: ${new Date().toLocaleString('en-US', { 
-              timeZone: 'Asia/Bangkok', 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit',
-              timeZoneName: 'short'
-            })}*`;
+            // Replace template placeholders
+            const readme = template
+              .replace('{{name}}', intro.name || 'Tanakit')
+              .replace('{{title}}', intro.title || 'AI Software Engineer')
+              .replace('{{location}}', intro.location || 'Bangkok, Thailand')
+              .replace('{{description}}', intro.description?.substring(0, 200) || 'Passionate about building intelligent systems that solve real-world problems')
+              .replace('{{experience}}', intro.quickFacts?.yearOfExperience || '3')
+              .replace('{{projectsCount}}', intro.quickFacts?.projectsCount || '10')
+              .replace('{{technologiesCount}}', intro.quickFacts?.technologiesCount || '20')
+              .replace('{{hobbies}}', intro.quickFacts?.hobbies?.join(', ') || 'Running, Music, Gaming')
+              .replace('{{currentRole}}', currentRole)
+              .replace('{{techStack}}', techStack)
+              .replace('{{featuredProjects}}', featuredProjects)
+              .replace('{{email}}', intro.email || 'email@domain.com')
+              .replace('{{linkedin}}', intro.linkedin ? intro.linkedin.replace('linkedin.com/in/', 'linkedin.com/in/') : 'linkedin.com/in/tumrabert')
+              .replace('{{lastUpdated}}', new Date().toLocaleString('en-US', { 
+                timeZone: 'Asia/Bangkok', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                timeZoneName: 'short' 
+              }));
 
             fs.writeFileSync('README.md', readme);
             console.log('README.md updated successfully!');
             
           } catch (error) {
             console.error('Error updating README:', error.message);
-            console.error('Full error details:', error);
-            
-            // Create a fallback README if API fails
-            const fallbackReadme = `# Hi there, I'm Tanakit 👋
-
-## 🚀 About Me
-
-**AI Software Engineer** | Bangkok, Thailand 📍
-
-> Passionate about building intelligent systems that solve real-world problems...
-
-## 📫 Let's Connect
-
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/tumrabert)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tumrabert)
-[![Portfolio](https://img.shields.io/badge/-Portfolio-FF6B6B?style=for-the-badge&logo=vercel)](https://tumrabert.com)
-
----
-*API temporarily unavailable. README will be updated when service is restored.*
-*Last attempted update: ${new Date().toLocaleString('en-US', { 
+            const timestamp = new Date().toLocaleString('en-US', { 
               timeZone: 'Asia/Bangkok', 
               year: 'numeric', 
               month: 'long', 
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit',
-              timeZoneName: 'short'
-            })}*`;
+              day: 'numeric', 
+              hour: '2-digit', 
+              minute: '2-digit', 
+              timeZoneName: 'short' 
+            });
+            const fallbackReadme = '# Hi there, I\\'m Tanakit 👋\\n\\n' +
+              '## 🚀 About Me\\n' +
+              '**AI Software Engineer** | Bangkok, Thailand 📍\\n' +
+              '> Passionate about building intelligent systems that solve real-world problems...\\n\\n' +
+              '## 📫 Let\\'s Connect\\n' +
+              '[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/tumrabert)\\n' +
+              '[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tumrabert)\\n' +
+              '[![Portfolio](https://img.shields.io/badge/-Portfolio-FF6B6B?style=for-the-badge&logo=vercel)](https://tumrabert.com)\\n\\n' +
+              '---\\n' +
+              '*API temporarily unavailable. README will be updated when service is restored.*\\n' +
+              '*Last attempted update: ' + timestamp + '*';
             
             fs.writeFileSync('README.md', fallbackReadme);
             console.log('Fallback README.md created due to API error');
@@ -216,8 +154,10 @@ Currently working on exciting projects that will be showcased here soon!
         }
 
         updateReadme();
-        EOF
-        node update-readme.js
+        SCRIPT_EOF
+
+    - name: Run update script
+      run: node update-readme.js
         
     - name: Commit and push changes
       run: |
