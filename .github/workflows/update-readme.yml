@@ -69,22 +69,22 @@ jobs:
             let currentRole = 'Currently seeking new opportunities';
             if (workExperiences.length > 0 && workExperiences[0]) {
               const exp = workExperiences[0];
-              currentRole = '**' + (exp.position || 'Software Engineer') + '** @ **' + (exp.company || 'Tech Company') + '**\\n';
-              currentRole += '📅 ' + (exp.start || 'Present') + ' - ' + (exp.end || 'Present') + '\\n\\n';
+              currentRole = '**' + (exp.position || 'Software Engineer') + '** @ **' + (exp.company || 'Tech Company') + '**' + String.fromCharCode(10);
+              currentRole += '📅 ' + (exp.start || 'Present') + ' - ' + (exp.end || 'Present') + String.fromCharCode(10) + String.fromCharCode(10);
               if (exp.details && Array.isArray(exp.details)) {
-                currentRole += exp.details.map(detail => '- ' + detail).join('\\n');
+                currentRole += exp.details.map(detail => '- ' + detail).join(String.fromCharCode(10));
               }
             }
 
-            let techStack = '### Programming Languages\\nWorking with various technologies to build amazing projects!';
+            let techStack = '### Programming Languages' + String.fromCharCode(10) + 'Working with various technologies to build amazing projects!';
             if (Object.entries(groupedTech).length > 0) {
               techStack = Object.entries(groupedTech).map(([category, techs]) => {
                 const badges = techs && Array.isArray(techs) ? techs.map(tech => createBadgeUrl(tech)).join(' ') : '';
-                return '\\n### ' + category + '\\n' + badges;
+                return String.fromCharCode(10) + '### ' + category + String.fromCharCode(10) + badges;
               }).join('');
             }
 
-            let featuredProjects = '### 🚀 Coming Soon\\nCurrently working on exciting projects that will be showcased here soon!';
+            let featuredProjects = '### 🚀 Coming Soon' + String.fromCharCode(10) + 'Currently working on exciting projects that will be showcased here soon!';
             if (projects && Array.isArray(projects) && projects.length > 0) {
               featuredProjects = projects.filter(p => p && !p.hide).slice(0, 3).map(project => {
                 const name = project.name || 'Untitled Project';
@@ -93,26 +93,29 @@ jobs:
                 const techs = project.technologies && Array.isArray(project.technologies) ? project.technologies.map(tech => '`' + tech + '`').join(' ') : 'Various technologies';
                 const githubBadge = project.github ? '[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)](' + project.github + ')' : '';
                 const demoBadge = project.demo ? '[![Demo](https://img.shields.io/badge/-Live_Demo-FF6B6B?style=flat-square&logo=vercel)](' + project.demo + ')' : '';
-                return '\\n### 🔗 [' + name + '](' + url + ')\\n\\n' + desc + '\\n\\n**Tech Stack**: ' + techs + '\\n\\n' + githubBadge + ' ' + demoBadge;
+                return String.fromCharCode(10) + '### 🔗 [' + name + '](' + url + ')' + String.fromCharCode(10) + String.fromCharCode(10) + desc + String.fromCharCode(10) + String.fromCharCode(10) + '**Tech Stack**: ' + techs + String.fromCharCode(10) + String.fromCharCode(10) + githubBadge + ' ' + demoBadge;
               }).join('');
             }
 
             // Replace template placeholders
+            const email = intro.email || 'email@domain.com';
+            const linkedin = intro.linkedin ? intro.linkedin.replace('linkedin.com/in/', 'linkedin.com/in/') : 'linkedin.com/in/tumrabert';
+            
             const readme = template
-              .replace('{{name}}', intro.name || 'Tanakit')
-              .replace('{{title}}', intro.title || 'AI Software Engineer')
-              .replace('{{location}}', intro.location || 'Bangkok, Thailand')
-              .replace('{{description}}', intro.description?.substring(0, 200) || 'Passionate about building intelligent systems that solve real-world problems')
-              .replace('{{experience}}', intro.quickFacts?.yearOfExperience || '3')
-              .replace('{{projectsCount}}', intro.quickFacts?.projectsCount || '10')
-              .replace('{{technologiesCount}}', intro.quickFacts?.technologiesCount || '20')
-              .replace('{{hobbies}}', intro.quickFacts?.hobbies?.join(', ') || 'Running, Music, Gaming')
-              .replace('{{currentRole}}', currentRole)
-              .replace('{{techStack}}', techStack)
-              .replace('{{featuredProjects}}', featuredProjects)
-              .replace('{{email}}', intro.email || 'email@domain.com')
-              .replace('{{linkedin}}', intro.linkedin ? intro.linkedin.replace('linkedin.com/in/', 'linkedin.com/in/') : 'linkedin.com/in/tumrabert')
-              .replace('{{lastUpdated}}', new Date().toLocaleString('en-US', { 
+              .replace(/{{name}}/g, intro.name || 'Tanakit')
+              .replace(/{{title}}/g, intro.title || 'AI Software Engineer')
+              .replace(/{{location}}/g, intro.location || 'Bangkok, Thailand')
+              .replace(/{{description}}/g, intro.description?.substring(0, 200) || 'Passionate about building intelligent systems that solve real-world problems')
+              .replace(/{{experience}}/g, intro.quickFacts?.yearOfExperience || '3')
+              .replace(/{{projectsCount}}/g, intro.quickFacts?.projectsCount || '10')
+              .replace(/{{technologiesCount}}/g, intro.quickFacts?.technologiesCount || '20')
+              .replace(/{{hobbies}}/g, intro.quickFacts?.hobbies?.join(', ') || 'Running, Music, Gaming')
+              .replace(/{{currentRole}}/g, currentRole)
+              .replace(/{{techStack}}/g, techStack)
+              .replace(/{{featuredProjects}}/g, featuredProjects)
+              .replace(/{{email}}/g, email)
+              .replace(/{{linkedin}}/g, linkedin)
+              .replace(/{{lastUpdated}}/g, new Date().toLocaleString('en-US', { 
                 timeZone: 'Asia/Bangkok', 
                 year: 'numeric', 
                 month: 'long', 
@@ -136,16 +139,16 @@ jobs:
               minute: '2-digit', 
               timeZoneName: 'short' 
             });
-            const fallbackReadme = '# Hi there, I am Tanakit 👋\\n\\n' +
-              '## 🚀 About Me\\n' +
-              '**AI Software Engineer** | Bangkok, Thailand 📍\\n' +
-              '> Passionate about building intelligent systems that solve real-world problems...\\n\\n' +
-              '## 📫 Let us Connect\\n' +
-              '[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/tumrabert)\\n' +
-              '[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tumrabert)\\n' +
-              '[![Portfolio](https://img.shields.io/badge/-Portfolio-FF6B6B?style=for-the-badge&logo=vercel)](https://tumrabert.com)\\n\\n' +
-              '---\\n' +
-              '*API temporarily unavailable. README will be updated when service is restored.*\\n' +
+            const fallbackReadme = '# Hi there, I am Tanakit 👋' + String.fromCharCode(10) + String.fromCharCode(10) +
+              '## 🚀 About Me' + String.fromCharCode(10) +
+              '**AI Software Engineer** | Bangkok, Thailand 📍' + String.fromCharCode(10) +
+              '> Passionate about building intelligent systems that solve real-world problems...' + String.fromCharCode(10) + String.fromCharCode(10) +
+              '## 📫 Let us Connect' + String.fromCharCode(10) +
+              '[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/tumrabert)' + String.fromCharCode(10) +
+              '[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tumrabert)' + String.fromCharCode(10) +
+              '[![Portfolio](https://img.shields.io/badge/-Portfolio-FF6B6B?style=for-the-badge&logo=vercel)](https://tumrabert.com)' + String.fromCharCode(10) + String.fromCharCode(10) +
+              '---' + String.fromCharCode(10) +
+              '*API temporarily unavailable. README will be updated when service is restored.*' + String.fromCharCode(10) +
               '*Last attempted update: ' + timestamp + '*';
             
             fs.writeFileSync('README.md', fallbackReadme);
