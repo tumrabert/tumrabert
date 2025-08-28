@@ -1,106 +1,75 @@
-# Tanakit Phentun (Tum)
+# Hi there, I'm Tanakit Phentun 👋
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tumrabert) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tumrabert)
-<!--[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/tumrabert/)-->
-<!--[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/tumrabertt/)-->
+![Profile Banner](https://github.com/tumrabert/tumrabert/blob/main/assets/banner.gif?raw=true)
 
-## About Me
+## 🚀 About Me
 
-Hi, I'm **Tanakit Phentun** (nickname Tum), I specialize in backend development, blockchain, and cloud engineering, with a passion for advancing financial payment systems and innovative Web3 solutions. My mission is to enhance technology and processes in Thailand’s financial ecosystem.
+**AI Software Engineer** | Bangkok, Thailand 📍
 
-- 🌍 **Location**: Bangkok, Thailand
-- ✉️ **Email**: tum_tanakid@hotmail.com
-- 🌐 **Website**: [My Resume](https://tumrabertworld.vercel.app/resume)
+> My career is driven by a passion for building intelligent systems that solve real-world problems. I began with a strong foundation in software engineering, developing enterprise applications for the f...
 
----
+### 📊 Quick Stats
+- 🎯 **Experience**: 3+ years
+- 🛠️ **Projects**: 10+ completed
+- 💻 **Technologies**: 10+ mastered
+- 🎮 **Hobbies**: Runnning, Music, Gaming
 
-## Skills & Expertise
+## 💼 Current Role
 
-### Programming
-- **Languages**: Python, SQL, Node.js, JavaScript, TypeScript, Solidity
-- **Frameworks**: ReactJS, NextJS, ExpressJS
+**AI Engineer** @ **Avalant**\n📅 February 2025 - Ongoing\n\n- Design and build data-driven AI automation workflows, integrating various data sources via APIs for enterprise clients.\n- Collaborate with cross-functional teams to develop and deploy AI/ML solutions into production environments.
 
-### Tools & Platforms
-- Git, Postman, Docker, Terraform, Figma, AWS, Apache Airflow
-- Performance Testing: LoadRunner, ALM
-- Version Control & Collaboration: GitHub, Jira, Confluence
+## 🛠️ Tech Stack
+\n### Language\n![Python](https://img.shields.io/badge/-Python-000000?style=flat-square&logo=python&logoColor=white) ![Go](https://img.shields.io/badge/-Go-000000?style=flat-square&logo=go&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-000000?style=flat-square&logo=javascript&logoColor=white) ![TypeScript](https://img.shields.io/badge/-TypeScript-000000?style=flat-square&logo=typescript&logoColor=white)\n### Framework\n![React](https://img.shields.io/badge/-React-000000?style=flat-square&logo=react&logoColor=white) ![Next.js](https://img.shields.io/badge/-Nextjs-000000?style=flat-square&logo=nextjs&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-000000?style=flat-square&logo=tailwindcss&logoColor=white) ![Node.js](https://img.shields.io/badge/-Nodejs-000000?style=flat-square&logo=nodejs&logoColor=white) ![Express.js](https://img.shields.io/badge/-Expressjs-000000?style=flat-square&logo=expressjs&logoColor=white)\n### Cloud & DevOps\n![Azure](https://img.shields.io/badge/-Azure-000000?style=flat-square&logo=azure&logoColor=white) ![Docker](https://img.shields.io/badge/-Docker-000000?style=flat-square&logo=docker&logoColor=white) ![Jenkins](https://img.shields.io/badge/-Jenkins-000000?style=flat-square&logo=jenkins&logoColor=white) ![Nginx](https://img.shields.io/badge/-Nginx-000000?style=flat-square&logo=nginx&logoColor=white) ![Vercel](https://img.shields.io/badge/-Vercel-000000?style=flat-square&logo=vercel&logoColor=white) ![Postman](https://img.shields.io/badge/-Postman-000000?style=flat-square&logo=postman&logoColor=white)\n### Databases\n![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-000000?style=flat-square&logo=postgresql&logoColor=white) ![MongoDB](https://img.shields.io/badge/-MongoDB-000000?style=flat-square&logo=mongodb&logoColor=white) ![MySQL](https://img.shields.io/badge/-MySQL-000000?style=flat-square&logo=mysql&logoColor=white)\n### Data Science & Analytics\n![Scikit-learn](https://img.shields.io/badge/-Scikitlearn-000000?style=flat-square&logo=scikitlearn&logoColor=white) ![TensorFlow](https://img.shields.io/badge/-TensorFlow-000000?style=flat-square&logo=tensorflow&logoColor=white) ![OpenAI](https://img.shields.io/badge/-OpenAI-000000?style=flat-square&logo=openai&logoColor=white) ![Hugging Face](https://img.shields.io/badge/-Hugging%20Face-000000?style=flat-square&logo=huggingface&logoColor=white) ![Jupyter](https://img.shields.io/badge/-Jupyter-000000?style=flat-square&logo=jupyter&logoColor=white) ![NumPy](https://img.shields.io/badge/-NumPy-000000?style=flat-square&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/-Pandas-000000?style=flat-square&logo=pandas&logoColor=white)
 
-### Cloud & DevOps
-- AWS Cloud (EC2, S3, Lambda, API Gateway, Elastic Beanstalk)
-- Infrastructure as Code (Terraform)
-- CI/CD Pipelines (GitLab, GitHub Actions)
-- Containerization (Docker)
+## 🌟 Featured Projects
+\n### 🔗 [1inchXNear](https://1inch-fusion-near.vercel.app/)\n\nThe 1inch Fusion+ Near Extension is a cross-chain swap system enabling secure, trustless ETH ↔ NEAR exchanges without bridges or wrapped tokens. It us...\n\n**Tech Stack**: `React` `Next.js` `solidity` `Node.js` `Rust`\n\n[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)](https://github.com/tumrabert/1inchXNear) [![Demo](https://img.shields.io/badge/-Live_Demo-FF6B6B?style=flat-square&logo=vercel)](https://1inch-fusion-near.vercel.app/)\n### 🔗 [The Portfolio](https://tumrabert.com/)\n\nDo you wanna learn ‘Recursion’?   
+Click here to learn....\n\n**Tech Stack**: `Next.js` `MongoDB` `React` `Node.js` `DigitalOcean` `Jenkins` `Docker`\n\n[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)](https://github.com/tumrabert/ProfilePage) [![Demo](https://img.shields.io/badge/-Live_Demo-FF6B6B?style=flat-square&logo=vercel)](https://tumrabert.com/)\n### 🔗 [Aptitude Test for Airline Pilot](https://pilotgame.vercel.app/)\n\nA training platform for airline pilot
 
----
+Created with:
+  - Next.js 15 & TypeScript for robust web architecture
+  - Three.js & React Three Fiber for imme...\n\n**Tech Stack**: `React` `Next.js` `TypeScript` `Three.js`\n\n[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)](https://github.com/tumrabert/PilotAptGame) [![Demo](https://img.shields.io/badge/-Live_Demo-FF6B6B?style=flat-square&logo=vercel)](https://pilotgame.vercel.app/)
 
-## Experience
+## 📈 GitHub Analytics
 
-### Full Stack Developer Internship  
-**Ayodia Co., Ltd**  
-_Jan 2024 – Mar 2024_  
-- Customized Strapi CMS for TTB Bank’s internal content management systems.
-- Developed solutions using React, Node.js, and conducted unit tests with Jest.
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=tumrabert&show_icons=true&theme=radical&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tumrabert&layout=compact&langs_count=8&theme=radical"/>
+</div>
 
-### Software Quality Management Internship  
-**Kasikorn Business-Technology Group (KBTG)**  
-_May 2023 – Aug 2023_  
-- Conducted performance testing using LoadRunner, ensuring application scalability.
-- Analyzed task allocation efficiency to optimize team productivity.
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tumrabert&theme=radical" alt="GitHub Streak" />
+</div>
 
----
+## 🏆 GitHub Trophies
 
-## Education
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=tumrabert&theme=radical&no-frame=false&no-bg=false&margin-w=4&row=1" alt="GitHub Trophies" />
+</div>
 
-- **B.Eng. Computer Engineering**  
-  Chulalongkorn University, Bangkok, Thailand  
-  **GPAX**: 3.02  
-  _2020 – 2024_
+## 📫 Let's Connect
 
----
+<div align="center">
 
-## Certifications
+[![Email](https://img.shields.io/badge/-tum_tanakitp@hotmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:{{email}})
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tumrabert)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/tumrabert)
+[![Portfolio](https://img.shields.io/badge/-Portfolio-FF6B6B?style=for-the-badge&logo=vercel)](https://tumrabert.com)
 
-- **Google Cloud Skill Boost**  
-  [View Certification](https://www.cloudskillsboost.google/public_profiles/25d6dcc2-8121-4792-8d28-96a4b71d9dc0)  
-  - Specialization in Terraform, AI/ML with Vertex AI, and GCP infrastructure setup.
+</div>
 
-- **Google Data Analytics Professional Certificate**  
-  [View Certification](https://www.coursera.org/account/accomplishments/specialization/certificate/VS5ACQJ6DV86)  
+## 💡 Fun Facts
 
-- **ETHGlobal Bangkok Hackathon**  
-  [View Certification](https://drive.google.com/file/d/1AoAqNElWenAZoqjB3XUxxgtr4EZW95Hj/view?usp=sharing)  
+- 🔄 This README auto-updates daily using GitHub Actions
+- 📊 Data is synced from my portfolio API: `https://tumrabert.com/api/portfolio`
+- 🎯 Always learning and building cool stuff!
 
 ---
 
-## Featured Projects
-
-### [HaveFun(d)](https://ethglobal.com/showcase/havefun-d-fm3ie)  
-- Built for ETHGlobal Bangkok Hackathon, enabling Web3 fundraising with Web2 payment integration.  
-- Fundraiser destination: Hedera.
-
-### [Camping Booking System](https://github.com/tumrabert/Backend_Development_Template)  
-- Developed a RESTful API using Node.js, Express.js, and MongoDB for managing camping reservations.
-
-### [Swine Fat Measurement (Senior Project)](https://github.com/Jinnapat/betagro-swine-fat-measurement-frontend)  
-- Created a ReactJS/Next.js interface for efficient fat measurement using computer vision.
-
-### [PlayHub](https://github.com/2110336-2565-2/sec3-group13-playhub)  
-- A NextJS platform connecting board game enthusiasts.
-
-### [WordPress Automation Deployment](https://github.com/tumrabert/kaggle_text_multilabel_classification)  
-- Automated WordPress deployments on AWS with Terraform.
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=tumrabert&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile views" />
+  <br><br>
+  <b>⭐ If you like my work, consider giving a star to my repositories!</b>
+</div>
 
 ---
-
-## Interests
-
-- **Professional**: Blockchain & Web3, Cloud Engineering, Productivity & Life Hacks  
-- **Hobbies**: Playing guitar, podcasting, acting  
-- **Pets**: Proud owner of a chihuahua 🐕
-
----
-
-## Let's Connect!
-
-Feel free to explore my [GitHub](https://github.com/tumrabert) or connect via [LinkedIn](https://linkedin.com/in/tumrabert).  
-🚀 Check out my full resume [here](https://tumrabertworld.vercel.app/resume)!
+*Last updated: August 28, 2025 at 09:54 PM GMT+7*
