@@ -11,4 +11,4 @@
 
 ---
 *API temporarily unavailable. README will be updated when service is restored.*
-*Last attempted update: May 31, 2026 at 01:04 AM GMT+7*
+*Last attempted update: June 1, 2026 at 01:06 AM GMT+7*
